@@ -14,6 +14,9 @@ class MessageStream:
 	def output(self,data):
 		self.stream.output(data)
 		
+	def inputData(self):
+		return raw_input("(",self.stream.name,"):")
+		
 class UnitStream:
 	def __init__(self):
 		self.stream = Stream("UNITS")
@@ -21,12 +24,18 @@ class UnitStream:
 	def output(self,data):
 		self.stream.output(data)
 		
+	def inputData(self):
+		return raw_input("(",self.stream.name,"):")
+		
 class TownStream:
 	def __init__(self):
 		self.stream = Stream("TOWNS")
 	
 	def output(self,data):
 		self.stream.output(data)
+	
+	def inputData(self):
+		return raw_input("(",self.stream.name,"):")
 		
 class SettingsStream:
 	def __init__(self):
@@ -34,6 +43,9 @@ class SettingsStream:
 	
 	def output(self,data):
 		self.stream.output(data)
+		
+	def inputData(self):
+		return raw_input("(",self.stream.name,"):")
 		
 default = SettingsStream
 
